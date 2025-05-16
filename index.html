@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name Validation</title>
+    <title>Baby Shower RSVP</title>
     <script>
         function validateName() {
             let name = document.getElementById("name").value;
@@ -17,8 +17,10 @@
                 errorMsg.textContent = "Name must contain only letters.";
                 return false;
             } else {
-                errorMsg.textContent = "";
-                return true;
+                if (name == "Jan")
+                  seats.textContent = "1 seat";
+                else if (name=="Marian")
+                  seats.textContent = "2 seats";
             }
         }
     </script>
@@ -26,6 +28,7 @@
 <body>
     <form onsubmit="return validateName()">
         <label for="name">Enter your name:</label>
+        <label for="seats"></label>
         <input type="text" id="name" name="name">
         <span id="error-message" style="color: red;"></span>
         <br>
