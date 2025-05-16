@@ -1,16 +1,35 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.5">
-  <style type="text/css">
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Validation</title>
+    <script>
+        function validateName() {
+            let name = document.getElementById("name").value;
+            let errorMsg = document.getElementById("error-message");
+            let regex = /^[A-Za-z]+$/;
+
+            if (name.trim() === "") {
+                errorMsg.textContent = "Name cannot be empty.";
+                return false;
+            } else if (!regex.test(name)) {
+                errorMsg.textContent = "Name must contain only letters.";
+                return false;
+            } else {
+                errorMsg.textContent = "";
+                return true;
+            }
+        }
+    </script>
 </head>
 <body>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; -webkit-text-stroke: #000000"><span class="s1"><b>Hello Junnie</b></span></h1>
+    <form onsubmit="return validateName()">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name">
+        <span id="error-message" style="color: red;"></span>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
