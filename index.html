@@ -17,12 +17,14 @@
                 errorMsg.textContent = "Name must contain only letters.";
                 return false;
             } else {
-                if (name=="Jan")
+                if (name=="Jan") { 
                   errorMsg.textContent = "1 seat";
                   return false;
-                else if (name=="Marian")
+                } else if (name=="Marian") {
                   errorMsg.textContent = "2 seats";
                   return false;
+                  }
+                
             }
         }
     </script>
