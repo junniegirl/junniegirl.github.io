@@ -17,10 +17,10 @@
                 errorMsg.textContent = "Name must contain only letters.";
                 return false;
             } else {
-                if (name == "Jan")
-                  seats.textContent = "1 seat";
+                if (name=="Jan")
+                  errorMsg.textContent = "1 seat";
                 else if (name=="Marian")
-                  seats.textContent = "2 seats";
+                  errorMsg.textContent = "2 seats";
             }
         }
     </script>
@@ -28,7 +28,6 @@
 <body>
     <form onsubmit="return validateName()">
         <label for="name">Enter your name:</label>
-        <label for="seats"></label>
         <input type="text" id="name" name="name">
         <span id="error-message" style="color: red;"></span>
         <br>
